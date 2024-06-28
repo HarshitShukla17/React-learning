@@ -36,7 +36,7 @@ export const todoSlice=createSlice({
     //update has been not used yet..
     updateTodo:(state,action)=>{
        const {id,text}=action.payload
-        state.todos=state.todos.filter((todo)=>todo.id==id?{...todo,text:text}:todo)
+        state.todos=state.todos.map((todo)=>todo.id==id?{...todo,text:text}:todo)
     }
    }
 })

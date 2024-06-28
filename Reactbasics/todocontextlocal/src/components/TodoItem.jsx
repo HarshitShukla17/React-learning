@@ -11,8 +11,10 @@ function TodoItem({ todo }) {
         setIsTodoEditable(false)//because todo has been edited
     }
     
+    //if todo is completed then we can't edit it
     const toggleCompleted=()=>{
         toggleComplete(todo.id)
+        if(todo.completed)setIsTodoEditable(false)
     }
 
     return (
